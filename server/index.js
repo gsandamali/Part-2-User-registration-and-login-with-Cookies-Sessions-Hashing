@@ -89,18 +89,3 @@ if (result.length > 0) {
 app.listen(3001, () => {
     console.log("running server");
 });
-res.send(result);
-                    } else{
-                        res.send({message: "Wrong username/ password comination!"}); 
-                    }
-                });
-            } else {
-                res.send({ message: "User doesn't exists"});
-            }
-        }
-    );
-});
- 
-app.listen(3001, () => {
-    console.log("running server");
-});
