@@ -38,8 +38,8 @@ const db = mysql.createConnection({
 app.post('/register', (req, res)=> {
     const username = req.body.username;
     const password = req.body.password;
-bcrypt.hash(password,saltRound, (err, hash) => {
-if (err) {
+    bcrypt.hash(password,saltRound, (err, hash) => {
+    if (err) {
             console.log(err)
         }
         db.execute( 
@@ -69,7 +69,7 @@ app.post('/login', (req, res) => {
             if (err) {
                 res.send({err: err});
             }
-if (result.length > 0) {
+            if (result.length > 0) {
                 bcrypt.compare(password, result[0].password, (error, response) => {
                     if (response) {
                         req.session.user = result;
