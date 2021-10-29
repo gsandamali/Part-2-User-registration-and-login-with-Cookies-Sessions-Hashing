@@ -1,9 +1,13 @@
 const express = require("express");
 const mysql = require("mysql2");
 const cors = require("cors");
+
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
+
+const bcrypt = require('bcrypt');
+const saltRound = 10;
  
 const app = express();
  
